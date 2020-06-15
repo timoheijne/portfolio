@@ -3,36 +3,28 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
-import Home from './pages/home/home' 
-import About from './pages/about/about' 
-import Contact from './pages/contact/contact' 
+import Home from './pages/home/home.page' 
+import About from './pages/about/about.page' 
+import Contact from './pages/contact/contact.page' 
+import Projects from './pages/projects/projects.page' 
+import NavbarComponent from "./components/navbar/navbar.component"
 
 export default function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-
+      <NavbarComponent />
+       
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+        <Route path="/projects">
+            <Projects />
+          </Route>
           <Route path="/about">
-            <About />
+            <About/>
           </Route>
           <Route path="/contact">
             <Contact />
