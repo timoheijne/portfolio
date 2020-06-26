@@ -2,10 +2,6 @@ import React from "react";
 
 import "./contact.page.scss"
 
-import {
-    Link
-} from "react-router-dom";
-
 export default class ContactPage extends React.Component {
     render() {
         return (
@@ -14,9 +10,9 @@ export default class ContactPage extends React.Component {
 
                 
                 <div id="contact-buttons">
-                    <a target="_blank" href="https://github.com/timoheijne">Github</a>
-                    <a target="_blank" href="https://www.linkedin.com/in/timoheijne/">LinkedIn</a>
-                    <a target="_blank" href="https://keybase.io/TimoHeijne">Keybase</a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/timoheijne">Github</a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/timoheijne/">LinkedIn</a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://keybase.io/TimoHeijne">Keybase</a>
                     <a href="mailto:me@timoheijne.nl">Email (me@timoheijne.nl)</a>
                 </div>
             </div>

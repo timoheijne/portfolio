@@ -6,7 +6,7 @@ import ProjectComponent from "../../components/project/project.component";
 export default class ProjectsPage extends React.Component {
     render() {
         return (
-            <div id="project-page">
+            <div id="projects-page">
                 <div><h1 id="page-header">Projects Page</h1></div>
 
                 <ProjectComponent />

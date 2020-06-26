@@ -10,6 +10,7 @@ import About from './pages/about/about.page'
 import Contact from './pages/contact/contact.page' 
 import Projects from './pages/projects/projects.page' 
 import NavbarComponent from "./components/navbar/navbar.component"
+import ProjectPage from "./pages/project/project.page";
 
 export default function App() {
   return (
@@ -20,8 +21,11 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-        <Route path="/projects">
+          <Route path="/projects">
             <Projects />
+          </Route>
+          <Route path="/project/:project">
+            <ProjectPage />
           </Route>
           <Route path="/about">
             <About/>
