@@ -1,13 +1,55 @@
 #project-page {
-    display: flex;
     width: 50%;
     margin: auto;
     height: 100%;
-    flex-direction: column;
 }
 
 #page-header {
     color: white;
-    font-size: 45px;
-    text-align: center;
+    font-size: 40px;
+    text-align: left;
+}
+
+#project-root {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#project-info {
+    width: 80%;
+}
+
+#project-sidebar {
+    width: 20%;
+}
+
+#project-sidebar ul {
+    margin-top: 0;
+    list-style: none;
+    color: black;
+    padding: 0;
+    background-color: white;
+    
+}
+
+#project-sidebar ul li {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: right;
+}
+
+#project-carousel {
+    width: 75%;
+    margin: auto;
+}
+
+#project-carousel img {
+    width: 100%;
+    
+}
+
+#project-sections {
+    margin-top: 30px;
+    color: white;
+    padding-right: 50px;
 }
