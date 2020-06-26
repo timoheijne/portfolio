@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v1.1.0
+      with:
+        # Username used to log in to a Docker registry. If not set then no login will occur
+        username: ${{ secrets.GITHUB_DOCKER_USERNAME }}
+        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
+        password: ${{ secrets.GITHUB_DOCKER_PASSWORD }}
+        # Server address of Docker registry. If not set then will default to Docker Hub
+        registry: docker.pkg.github.com # optional
+        # Docker repository to tag the image with
+        repository: portfolio
+        # Automatically tags the built image with the git short SHA as per the readme
+        tag_with_sha: true
