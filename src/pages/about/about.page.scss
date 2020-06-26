@@ -11,3 +11,17 @@
     font-size: 45px;
     text-align: center;
 }
+
+#about-display {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#about-image {
+    width: 40%;
+}
+
+#about-text {
+    width: 60%;
+    color: white;
+}
