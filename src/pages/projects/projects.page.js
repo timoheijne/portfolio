@@ -41,17 +41,13 @@ export default class ProjectsPage extends React.Component {
     getProjectList() {
         let list = [];
         this.state.projects.forEach(project => {
-            console.log(project)
             list.push(<ProjectComponent project={project} />)
         });
-
-        console.log(list)
 
         return list
     }
 
     render() {
-        console.log(this.projects)
         return (
             <div id="projects-page">
                 <div><h1 id="page-header">Projects Page</h1></div>
