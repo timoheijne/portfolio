@@ -1,3 +1,29 @@
 {
-    "title": "Test"
+    "$schema": "https://gist.githubusercontent.com/timoheijne/2319d219ff322f897ccd762901fe6ae3/raw/fa1cfbb6f0fba8023a4b3a242e002de2ef6d1285/manifest.schema.json",
+    
+    "title": "Test",
+    "summary": "",
+    "images": [
+        ""
+    ],
+    "links": [
+        {
+            "url": "url",
+            "name": "name",
+            "icon": "icon"
+        }
+    ],
+    "technologies": [
+        {
+            "name": "Tech Name",
+            "icon": "Tech icon",
+            "link": "Tech link"
+        }
+    ],
+    "sections": [
+        { 
+            "name": "Test",
+            "body": "Test Body"
+        }
+    ]
 }

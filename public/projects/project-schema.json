@@ -1,0 +1,279 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "title": "The name of the project",
+            "summary": "A small description of the project",
+            "images": [
+                "Links to images"
+            ],
+            "links": [
+                {
+                    "url": "url",
+                    "name": "name",
+                    "icon": "icon"
+                }
+            ],
+            "technologies": [
+                {
+                    "name": "Tech Name",
+                    "icon": "Tech icon",
+                    "link": "Tech link"
+                }
+            ],
+            "sections": [
+                {
+                    "name": "Test",
+                    "body": "Test Body"
+                }
+            ]
+        }
+    ],
+    "required": [
+        "title",
+        "summary",
+        "images",
+        "links",
+        "technologies",
+        "sections"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "title": {
+            "$id": "#/properties/title",
+            "type": "string",
+            "title": "Project Title",
+            "description": "A small yet consise title of this project.",
+            "default": "",
+            "examples": [
+                "Amazing project number one",
+                "Best project to have been written in the history"
+            ]
+        },
+        "summary": {
+            "$id": "#/properties/summary",
+            "type": "string",
+            "title": "Project Summary",
+            "description": "A small explaination about the project for the front-page of the project. (Supports Markdown)",
+            "default": ""
+        },
+        "images": {
+            "$id": "#/properties/images",
+            "type": "array",
+            "title": "Project Images",
+            "description": "An array of links to pictures to load.",
+            "default": [],
+            "additionalItems": true
+        },
+        "links": {
+            "$id": "#/properties/links",
+            "type": "array",
+            "title": "Project Links",
+            "description": "Holding all relevant links for a project.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "url": "https://github.com",
+                        "name": "Github",
+                        "icon": "icon"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$id": "#/properties/links/items/anyOf/0",
+                        "type": "object",
+                        "title": "The Link Object",
+                        "description": "The link object contains information about a link section on a project details page.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "url": "url",
+                                "name": "name",
+                                "icon": "icon"
+                            }
+                        ],
+                        "required": [
+                            "url",
+                            "name"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "url": {
+                                "$id": "#/properties/links/items/anyOf/0/properties/url",
+                                "type": "string",
+                                "title": "The URL",
+                                "description": "Enter an actual url for the button to point to.",
+                                "default": "",
+                                "examples": [
+                                    "https://github.com"
+                                ]
+                            },
+                            "name": {
+                                "$id": "#/properties/links/items/anyOf/0/properties/name",
+                                "type": "string",
+                                "title": "The name of the URL",
+                                "description": "The name of the URL.",
+                                "default": "",
+                                "examples": [
+                                    "Github"
+                                ]
+                            },
+                            "icon": {
+                                "$id": "#/properties/links/items/anyOf/0/properties/icon",
+                                "type": "string",
+                                "title": "The icon of the URL",
+                                "description": "The icon the url may use from (https://fontawesome.com/)",
+                                "default": "",
+                                "examples": [
+                                    "fab fa-github"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "$id": "#/properties/links/items"
+            }
+        },
+        "technologies": {
+            "$id": "#/properties/technologies",
+            "type": "array",
+            "title": "Project Technologies",
+            "description": "All technologies used by the project.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "name": "gRPC",
+                        "icon": "Tech icon",
+                        "link": "https://grpc.io/"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$id": "#/properties/technologies/items/anyOf/0",
+                        "type": "object",
+                        "title": "The technology object",
+                        "description": "Holding information about a technology used to this project",
+                        "default": {},
+                        "examples": [
+                            {
+                                "name": "gRPC",
+                                "icon": "Tech icon",
+                                "link": "https://grpc.io/"
+                            }
+                        ],
+                        "required": [
+                            "name"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "name": {
+                                "$id": "#/properties/technologies/items/anyOf/0/properties/name",
+                                "type": "string",
+                                "title": "The name of the technology",
+                                "default": "",
+                                "examples": [
+                                    "gRPC"
+                                ]
+                            },
+                            "icon": {
+                                "$id": "#/properties/technologies/items/anyOf/0/properties/icon",
+                                "type": "string",
+                                "title": "The icon of the technology",
+                                "description": "The icon of the technology. Which has to be in the public/icons folder for it to work.",
+                                "default": "",
+                                "examples": [
+                                    "icon-name"
+                                ]
+                            },
+                            "link": {
+                                "$id": "#/properties/technologies/items/anyOf/0/properties/link",
+                                "type": "string",
+                                "title": "Link to the technology",
+                                "description": "A link to the website of this specific technology.",
+                                "default": "",
+                                "examples": [
+                                    "https://grpc.io/"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "$id": "#/properties/technologies/items"
+            }
+        },
+        "sections": {
+            "$id": "#/properties/sections",
+            "type": "array",
+            "title": "The description section of a project",
+            "description": "Hold all sections for a project",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "name": "Test",
+                        "body": "Test Body"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$id": "#/properties/sections/items/anyOf/0",
+                        "type": "object",
+                        "title": "SectionObject",
+                        "description": "Hold information about a section",
+                        "default": {},
+                        "examples": [
+                            {
+                                "name": "Test",
+                                "body": "Test Body"
+                            }
+                        ],
+                        "required": [
+                            "name",
+                            "body"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "name": {
+                                "$id": "#/properties/sections/items/anyOf/0/properties/name",
+                                "type": "string",
+                                "title": "The name",
+                                "description": "A short paragraph name for this section.",
+                                "default": "",
+                                "examples": [
+                                    "Test"
+                                ]
+                            },
+                            "body": {
+                                "$id": "#/properties/sections/items/anyOf/0/properties/body",
+                                "type": "string",
+                                "title": "The body",
+                                "description": "Hold the entire body of a section, Markdown may be used.",
+                                "default": "",
+                                "examples": [
+                                    "Test Body"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "$id": "#/properties/sections/items"
+            }
+        }
+    }
+}

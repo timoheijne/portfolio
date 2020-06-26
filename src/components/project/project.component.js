@@ -10,15 +10,20 @@ import {
 const input = '**testing**'
 
 export default class ProjectComponent extends React.Component {
+    
+    componentWillReceiveProps() {
+        
+    }
+
     render() {
         return (
             <div>
                 <div class="project">
                     <div class="info-side">
-                        <h3 class="header">Project Name</h3>
+                        <h3 class="header">{this.props.project["title"]}</h3>
 
                         <div class="info">
-                            <ReactMarkdown source={input} />
+                            <ReactMarkdown source={this.props.project["summary"]}  />
                         </div>
                     </div>
                     
@@ -28,7 +33,7 @@ export default class ProjectComponent extends React.Component {
                 </div>
 
                 <div class="learn-more">
-                    <Link class="learn-more-button">Learn More</Link>
+                    <Link to={`/project/${this.props.project["permalink"]}`} class="learn-more-button">Learn More</Link>
                 </div>
             </div>
             

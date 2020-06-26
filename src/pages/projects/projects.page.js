@@ -23,6 +23,7 @@ export default class ProjectsPage extends React.Component {
                 fetch(`/projects/${project}.json`)
                 .then(response => response.json())
                 .then(projectData => { 
+                    projectData["permalink"] = project
                     
                     this.projects.push(projectData)
                     this.setState({
