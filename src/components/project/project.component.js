@@ -7,33 +7,29 @@ import {
     Link
 } from "react-router-dom";
 
-const input = '**testing**'
-
 export default class ProjectComponent extends React.Component {
     
-    componentWillReceiveProps() {
-        
-    }
+    // TODO: Check if input was good, if not. Don't load this project
 
     render() {
         return (
             <div>
-                <div class="project">
-                    <div class="info-side">
-                        <h3 class="header">{this.props.project["title"]}</h3>
+                <div className="project">
+                    <div className="info-side">
+                        <h3 className="header">{this.props.project["title"]}</h3>
 
-                        <div class="info">
+                        <div className="info">
                             <ReactMarkdown source={this.props.project["summary"]}  />
                         </div>
                     </div>
                     
-                    <div class="image-side">
+                    <div className="image-side">
                         <img src="https://via.placeholder.com/500x300" alt="Project Foto"></img>
                     </div> 
                 </div>
 
-                <div class="learn-more">
-                    <Link to={`/project/${this.props.project["permalink"]}`} class="learn-more-button">Learn More</Link>
+                <div className="learn-more">
+                    <Link to={`/project/${this.props.project["permalink"]}`} className="learn-more-button">Learn More</Link>
                 </div>
             </div>
             

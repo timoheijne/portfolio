@@ -24,7 +24,7 @@ export default class ProjectsPage extends React.Component {
                 .then(response => response.json())
                 .then(projectData => { 
                     projectData["permalink"] = project
-                    
+
                     this.projects.push(projectData)
                     this.setState({
                         projects: this.projects
@@ -42,7 +42,7 @@ export default class ProjectsPage extends React.Component {
     getProjectList() {
         let list = [];
         this.state.projects.forEach(project => {
-            list.push(<ProjectComponent project={project} />)
+            list.push(<ProjectComponent project={project} key={project["permalink"]} />)
         });
 
         return list
