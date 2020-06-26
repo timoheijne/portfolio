@@ -1,10 +1,13 @@
 
 import React from "react";
 import "./project.component.scss"
+import ReactMarkdown from 'react-markdown'
 
 import {
     Link
 } from "react-router-dom";
+
+const input = '**testing**'
 
 export default class ProjectComponent extends React.Component {
     render() {
@@ -15,7 +18,7 @@ export default class ProjectComponent extends React.Component {
                         <h3 class="header">Project Name</h3>
 
                         <div class="info">
-                            Teeeeesting
+                            <ReactMarkdown source={input} />
                         </div>
                     </div>
                     
