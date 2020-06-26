@@ -1,0 +1,33 @@
+#contact-page {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    height: 100%;
+    flex-direction: column;
+}
+
+#page-header {
+    color: white;
+    font-size: 45px;
+    text-align: center;
+}
+
+#contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#contact-buttons a {
+    width: 40%;
+    display: inline-block;
+    padding: 25px;
+
+    background-color: #0F36D6;
+
+}
+
+#contact-buttons a:nth-child(n+3) {
+    margin-top: 30px;
+
+}
