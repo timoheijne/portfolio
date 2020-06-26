@@ -21,4 +21,4 @@ jobs:
         tag_with_sha: true
         dockerfile: Dockerfile 
         push: true
-        target: portfolio
+        tags: portfolio 
