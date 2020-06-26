@@ -23,3 +23,5 @@ jobs:
         repository: portfolio
         # Automatically tags the built image with the git short SHA as per the readme
         tag_with_sha: true
+        # Path to the build context
+        path: /  
