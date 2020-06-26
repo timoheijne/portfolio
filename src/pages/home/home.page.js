@@ -1,4 +1,7 @@
 import React from "react";
+import {
+    Link
+  } from "react-router-dom";
 
 import "./home.page.scss"
 
@@ -17,12 +20,18 @@ export default class HomePage extends React.Component {
     render() {
         return (
             <div id="main">
-                <img src="/images/myself.png" alt="Test"></img>
                 <div id="me">
                     <h1>Hello</h1>
                     <h2>I'm Timo Heijne</h2>
                     <h3>{ this.whatAmI }</h3>
+
+                    <div id="to-project">
+                        <Link id="to-project" to="/projects">To Projects</Link>
+                    </div>
                 </div>
+
+                
+                <img src="/images/myself.png" alt="Test"></img>
             </div>
         );
     }
@@ -40,7 +49,7 @@ export default class HomePage extends React.Component {
         }
 
         this.currentItem = this.whatAmIOptions[i]
-        this.whatAmI = this.currentItem[0]
+        this.whatAmI = ""
 
         this.typeItem()
     }
