@@ -1,9 +1,7 @@
 import React from "react";
 
 import "./project.page.scss"
-import ReactMarkdown from 'react-markdown/with-html'
-
-const input = '## Test <hr>'
+import ProjectSectionComponent from "./sectioncomponent/section.component";
 
 export default class ProjectPage extends React.Component {
     render() {
@@ -19,9 +17,7 @@ export default class ProjectPage extends React.Component {
                         </div>
                         
                         <div id="project-sections">
-                            <div class="project-section">
-                                <ReactMarkdown escapeHtml={false} source={input} />
-                            </div>
+                            <ProjectSectionComponent />
                         </div>
                     </div>
 
