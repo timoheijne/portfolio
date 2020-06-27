@@ -2,6 +2,8 @@
 import React from "react";
 import "./project.component.scss"
 import ReactMarkdown from 'react-markdown'
+import CarouselComponent from "../carousel/carousel.component";
+
 
 import {
     Link
@@ -24,7 +26,7 @@ export default class ProjectComponent extends React.Component {
                     </div>
                     
                     <div className="image-side">
-                        <img src="https://via.placeholder.com/500x300" alt="Project Foto"></img>
+                        <CarouselComponent images={this.props.project["images"]} />
                     </div> 
                 </div>
 
