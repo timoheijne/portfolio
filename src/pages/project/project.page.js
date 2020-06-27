@@ -6,6 +6,7 @@ import {
 
 import "./project.page.scss"
 import ProjectSectionComponent from "./sectioncomponent/section.component";
+import CarrouselComponent from "../../components/carrousel/carrousel.component";
 
 export default class ProjectPage extends React.Component {
     
@@ -56,7 +57,7 @@ export default class ProjectPage extends React.Component {
         let links = [];
 
         this.state.project.links.forEach(link => {
-            links.push(<li className="clickable" onClick={this.handleLinkClick.bind(this)} data-link={link.url}>{link.name}</li>)
+            links.push(<li key={link.name} className="clickable" onClick={this.handleLinkClick.bind(this)} data-link={link.url}>{link.name}</li>)
         });
 
         return links     
@@ -67,9 +68,9 @@ export default class ProjectPage extends React.Component {
 
         this.state.project.technologies.forEach(tech => {
             if(tech.link !== undefined) {
-                technologies.push(<li className="clickable" onClick={this.handleLinkClick.bind(this)} data-link={tech.link}>{tech.name} </li>)
+                technologies.push(<li key={tech.name} className="clickable" onClick={this.handleLinkClick.bind(this)} data-link={tech.link}>{tech.name} </li>)
             } else {
-                technologies.push(<li>{tech.name}</li>)
+                technologies.push(<li key={tech.name}>{tech.name}</li>)
             }
             
         });
@@ -96,7 +97,7 @@ export default class ProjectPage extends React.Component {
                     <div id="project-info">
                         {/* IMAGES */}
                         <div id="project-carousel">
-                            <img src="https://via.placeholder.com/1920x1080" alt="Project"/>
+                            <CarrouselComponent images={this.state.project.images} />
                         </div>
                         
                         <div id="project-sections">
