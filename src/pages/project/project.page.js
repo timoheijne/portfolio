@@ -6,7 +6,7 @@ import {
 
 import "./project.page.scss"
 import ProjectSectionComponent from "./sectioncomponent/section.component";
-import CarrouselComponent from "../../components/carrousel/carrousel.component";
+import CarouselComponent from "../../components/carousel/carousel.component";
 
 export default class ProjectPage extends React.Component {
     
@@ -97,7 +97,7 @@ export default class ProjectPage extends React.Component {
                     <div id="project-info">
                         {/* IMAGES */}
                         <div id="project-carousel">
-                            <CarrouselComponent images={this.state.project.images} />
+                            <CarouselComponent images={this.state.project.images} />
                         </div>
                         
                         <div id="project-sections">

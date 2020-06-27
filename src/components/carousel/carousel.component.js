@@ -1,9 +1,9 @@
 
 import React from "react";
-import "./carrousel.component.scss"
+import "./carousel.component.scss"
 
 
-export default class CarrouselComponent extends React.Component {
+export default class CarouselComponent extends React.Component {
     
     constructor() {
         super()
