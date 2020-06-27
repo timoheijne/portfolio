@@ -26,7 +26,7 @@ export default class HomePage extends React.Component {
                     <h3>{ this.whatAmI }</h3>
 
                     <div id="to-project">
-                        <Link id="to-project" to="/projects">To Projects</Link>
+                        <Link id="to-project" to="/project">To Projects</Link>
                     </div>
                 </div>
 

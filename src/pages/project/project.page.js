@@ -88,7 +88,7 @@ export default class ProjectPage extends React.Component {
         if(this.state.isLoading) return <div></div>;
 
         if(this.state.backToProjects) {
-            return <Redirect to='/projects' />
+            return <Redirect to='/project' />
         }
 
         return (
