@@ -11,7 +11,8 @@ export default class CarouselComponent extends React.Component {
         this.state = {
             images: [],
             imageDOM: [],
-            currentActive: 0
+            currentActive: 0,
+            interval: undefined
         }
     }
 
@@ -28,13 +29,13 @@ export default class CarouselComponent extends React.Component {
             dom.push( <img key={i} className={classes} src={image} alt="Project"/>)    
         }
 
+        let interval = setInterval(() => this.nextItem(), 5000)
         this.setState({
             ...this.state,
             images: this.props.images,
-            imageDOM: dom
+            imageDOM: dom,
+            interval: interval
         })
-
-        setInterval(() => this.nextItem(), 5000)
     }
 
     nextItem() {
@@ -63,6 +64,11 @@ export default class CarouselComponent extends React.Component {
                {this.state.imageDOM}
             </div>
         );
+    }
+
+
+    componentWillUnmount() {
+        clearInterval(this.state.interval)
     }
 }
   
