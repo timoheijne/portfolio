@@ -57,7 +57,9 @@ export default class ProjectPage extends React.Component {
         let links = [];
 
         this.state.project.links.forEach(link => {
-            links.push(<li key={link.name} className="clickable" onClick={this.handleLinkClick.bind(this)} data-link={link.url}>{link.name}</li>)
+            links.push(<li key={link.name} className="clickable" onClick={this.handleLinkClick.bind(this)} data-link={link.url}>
+                    <span className="icon-left"><i className={link.icon}></i></span> {link.name} <span className="external-icon"><i className="fas fa-external-link-alt fa-xs"></i></span>
+                </li>)
         });
 
         return links     
@@ -68,7 +70,7 @@ export default class ProjectPage extends React.Component {
 
         this.state.project.technologies.forEach(tech => {
             if(tech.link !== undefined) {
-                technologies.push(<li key={tech.name} className="clickable" onClick={this.handleLinkClick.bind(this)} data-link={tech.link}>{tech.name} </li>)
+                technologies.push(<li key={tech.name} className="clickable" onClick={this.handleLinkClick.bind(this)} data-link={tech.link}>{tech.name} <span className="external-icon"><i className="fas fa-external-link-alt fa-xs"></i></span></li>)
             } else {
                 technologies.push(<li key={tech.name}>{tech.name}</li>)
             }

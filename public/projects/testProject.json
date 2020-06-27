@@ -2,7 +2,7 @@
     "$schema": "https://gist.githubusercontent.com/timoheijne/2319d219ff322f897ccd762901fe6ae3/raw/fa1cfbb6f0fba8023a4b3a242e002de2ef6d1285/manifest.schema.json",
     
     "title": "Test",
-    "summary": "",
+    "summary": "Summary and stuff",
     "images": [
         "https://via.placeholder.com/1920x1080",
         "https://via.placeholder.com/1920x1090"
@@ -11,7 +11,7 @@
         {
             "url": "https://github.com",
             "name": "Github",
-            "icon": "icon"
+            "icon": "fab fa-github"
         }
     ],
     "technologies": [
