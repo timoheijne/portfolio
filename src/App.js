@@ -21,21 +21,11 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/projects">
-            <Projects />
-          </Route>
-          <Route path="/project/:project">
-            <ProjectPage />
-          </Route>
-          <Route path="/about">
-            <About/>
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/projects" component={Projects} />
+          <Route path="/project/:project" component={ProjectPage} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/" component={Home} />
         </Switch>
       </div>
     </Router>

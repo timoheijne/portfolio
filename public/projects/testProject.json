@@ -8,8 +8,8 @@
     ],
     "links": [
         {
-            "url": "url",
-            "name": "name",
+            "url": "https://github.com",
+            "name": "Github",
             "icon": "icon"
         }
     ],
@@ -18,11 +18,19 @@
             "name": "Tech Name",
             "icon": "Tech icon",
             "link": "Tech link"
+        },
+        {
+            "name": "Tech Name 2",
+            "icon": "Tech icon"
         }
     ],
     "sections": [
         { 
             "name": "Test",
+            "body": "Test Body"
+        },
+        { 
+            "name": "Test 2",
             "body": "Test Body"
         }
     ]
